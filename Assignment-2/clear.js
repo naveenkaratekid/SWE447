@@ -10,13 +10,13 @@ function init() {
         return;
     }
 
-    gl.clearColor( 1.0, 0.0, 0.0, 1.0 );
+    gl.clear( 1.0, 1.0, 1.0, 1.0 );
 
     render();
 }
 
 function render() {
-    gl.clear( gl.COLOR_BUFFER_BIT );
+    gl.clearColor( gl.COLOR_BUFFER_BIT );
 }
 
 window.onload = init;// JavaScript Document
