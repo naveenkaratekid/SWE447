@@ -11,10 +11,13 @@ attribute vec4 vPosition;
 
 void main() 
 {
+    gl_PointSize = 5.0
      gl_Position = vPosition;
+     
 }
 </script>
 <script id = "Cone-fragment-shader" type="x-shader/x-fragment">
+precision highp float;
 void main()
 {
     gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
