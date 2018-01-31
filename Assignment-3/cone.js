@@ -1,4 +1,4 @@
-var square = null;
+var cone = null;
 var gl = null;
 
 function init() {
@@ -13,7 +13,7 @@ function init() {
 
     gl.clearColor( 0.0, 1.0, 1.0, 1.0 );
 	
-    cone = new Cone(gl);
+    cone = new Cone(gl,100);
 	
     render();
 }
