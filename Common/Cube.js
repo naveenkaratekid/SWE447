@@ -19,10 +19,14 @@ function Cube( vertexShaderId, fragmentShaderId ) {
     this.positions = { 
         values : new Float32Array([
            // Front face
-		    -0.5, -0.5, // Vertex 0
-		    0.5, -0.5, // Vertex 1
-		    0.5, 0.5, // Vertex 2
-		    -0.5, 0.5  // Vertex 3
+		    -0.5, -0.5, 0.5, // Vertex 0
+		    0.5, -0.5, 0.5, // Vertex 1
+		    0.5, 0.5, 0.5, // Vertex 2
+		    -0.5, 0.5, 0.5  // Vertex 3
+		    -0.5, -0.5, -0.5, // Vertex 4
+		    0.5, -0.5, -0.5, // Vertex 5
+		    0.5, 0.5, -0.5, // Vertex 6
+		    -0.5, 0.5, -0.5  // Vertex 7
 			
             ]),
         numComponents : 3
@@ -30,7 +34,7 @@ function Cube( vertexShaderId, fragmentShaderId ) {
     
     this.indices = { 
         values : new Uint16Array([
-            0, 1, 2, 0, 2, 3
+            0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7
         ])
     };
     this.indices.count = this.indices.values.length;
