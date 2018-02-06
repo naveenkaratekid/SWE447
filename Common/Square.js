@@ -21,7 +21,12 @@ function Square(gl, vertexShaderId, fragmentShaderId) {
 		    -0.5, -0.5, // Vertex 0
 		    0.5, -0.5, // Vertex 1
 		    0.5, 0.5, // Vertex 2
-		    -0.5, 0.5  // Vertex 3
+		    -0.5, 0.5,  // Vertex 3
+			// Front face
+		    -0.75, -0.75, // Vertex 4
+		    -0.5, -0.5, // Vertex 5
+		    -0.5, 0.5, // Vertex 6
+		    -0.75, 0.25  // Vertex 7
 		]),
 		numComponents : 2 // 3 components for each
 		// position (2D coords)
@@ -31,12 +36,16 @@ function Square(gl, vertexShaderId, fragmentShaderId) {
 		    1.0, 0.0, 0.0, 
 		    1.0, 0.0, 0.0,
 		    1.0, 0.0, 0.0,
-		    1.0, 0.0, 0.0
+		    1.0, 0.0, 0.0,
+			0.0, 1.0, 0.0, 
+		    0.0, 1.0, 0.0,
+		    0.0, 1.0, 0.0,
+		    0.0, 1.0, 0.0
 		]),
 		numComponents : 3 
 	};
     this.indices = {
-    values : new Uint16Array([ 0, 1, 2, 0, 2, 3])
+    values : new Uint16Array([ 0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7])
     };
 	
 	// positions
