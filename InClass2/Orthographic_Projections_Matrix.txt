@@ -1,0 +1,29 @@
+
+  l ≤ x ≤ r
+  0 ≤ x-l ≤ r-l
+  0 ≤ (x-l)/(r-l) ≤ 1
+  0 ≤ 2(x-l)/(r-l) ≤ 2
+  -1 ≤ 2((x-l)/(r-l))-1 ≤ 1
+  We have managed to remap the term in the middle to the range [-1,1].
+  -1 ≤ 2(x-l)/(r-l)-(r-l)/(r-l) ≤ 1
+  -1 ≤ (2x-2l-r+l)/(r-l) ≤ 1
+  -1 ≤ (2x-l-r) / (r-l) ≤ 1
+  -1 ≤ (2x/r-l) - (r+l/r-l) ≤ 1
+  We now have the formula to transform x.
+  x′=(2x/r−l)− (r+l/r−l)
+  to write it in the form of matrix:
+  
+  2/(r-l)       0           0       0
+  0             1           0       0
+  0             0           1       0
+  -(r+l)/r-l)   0           0       0
+  
+  The process for the y-coordinate is exactly the same. You just need to 
+  replace, r and l with t and b (top and bottom).
+  
+  For z start with:
+  n ≤ −z ≤ f
+  and do the similar operations.
+  
+  at the end transpose the matrix to get WebGL matrix.
+  
