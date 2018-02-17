@@ -144,6 +144,8 @@ function render() {
   ms.pop();
 
 	
+  var name2, planet2, data2;  
+	
   name2 = "Earth";
   planet2 = Planets[name2];
   data2 = SolarSystem[name2];
