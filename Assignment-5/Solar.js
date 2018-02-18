@@ -163,6 +163,26 @@ function render() {
   gl.uniform4fv(planet2.uniforms.color, flatten(data2.color));
   planet2.render();
   ms.pop();
+	
+  var name3, planet3, data3;  
+	
+  name2 = "Moon";
+  planet2 = Planets[name3];
+  data2 = SolarSystem[name3];
+  //
+  //  Add your code for more planets here!
+  //
+	
+  planet.PointMode = false;
+	
+  ms.push();
+  ms.scale(data3.radius);
+  gl.useProgram(planet3.program);
+  gl.uniformMatrix4fv(planet3.uniforms.MV, false, flatten(ms.current()));
+  gl.uniformMatrix4fv(planet3.uniforms.P, false, flatten(P));
+  gl.uniform4fv(planet3.uniforms.color, flatten(data3.color));
+  planet3.render();
+  ms.pop();
   
   window.requestAnimationFrame(render);
 }
