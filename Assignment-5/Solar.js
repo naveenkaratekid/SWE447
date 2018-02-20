@@ -167,7 +167,7 @@ function render() {
   planet2.render();
   ms.pop();
 	
-   window.requestAnimationFrame(render);	
+  
 	
   var name3, planet3, data3;  
 	
