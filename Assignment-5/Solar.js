@@ -159,7 +159,7 @@ function render() {
 	
   ms.push();
   ms.scale(data2.radius);
-  gl.useProgram(planet2.program);
+  gl.useProgram(planet.program);
   gl.uniformMatrix4fv(planet2.uniforms.MV, true, flatten(ms.current()));
   gl.uniformMatrix4fv(planet2.uniforms.P, true, flatten(P));
   gl.uniform4fv(planet2.uniforms.color, flatten(data2.color));
