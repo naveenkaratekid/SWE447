@@ -166,9 +166,9 @@ function render() {
 	
   var name3, planet3, data3;  
 	
-  name2 = "Moon";
-  planet2 = Planets[name3];
-  data2 = SolarSystem[name3];
+  name3 = "Moon";
+  planet3 = Planets[name3];
+  data3 = SolarSystem[name3];
   //
   //  Add your code for more planets here!
   //
