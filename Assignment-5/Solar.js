@@ -153,7 +153,7 @@ function render() {
   //  Add your code for more planets here!
   //
 	
-  planet.PointMode = false;
+  planet.PointMode = true;
 	
   ms.push();
   ms.scale(data2.radius);
