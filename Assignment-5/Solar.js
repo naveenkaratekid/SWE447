@@ -182,7 +182,7 @@ function render() {
 	
   planet.PointMode = false;
 	
-  ms.push();
+  
   ms.rotate(time/data.getYear, [0,1,0]);
   ms.translate(data.distance, 0, 0);
   ms.scale(data.radius);
@@ -192,7 +192,7 @@ function render() {
   gl.uniform4fv(planet.uniforms.color, flatten(data.color));
   planet.render();
   ms.pop();
-  ms.pop()
+  
   
   window.requestAnimationFrame(render);
 }
