@@ -127,7 +127,7 @@ function render() {
   // "planet" variable is set for each object, you will need to set this
   // for each planet separately.
 
-  planet.PointMode = true;
+  planet.PointMode = false;
 
   // Use the matrix stack to configure and render a planet.  How you rener
   // each planet will be similar, but not exactly the same.  In particular,
@@ -143,14 +143,14 @@ function render() {
   planet.render();
   ms.pop();
 	
-   window.requestAnimationFrame(render);
+  
 
 	
-  var name2, planet2, data2;  
+  
 	
   name = "Earth";
-  planet = Planets[name2];
-  data = SolarSystem[name2];
+  planet = Planets[name];
+  data = SolarSystem[name];
   //
   //  Add your code for more planets here!
   //
@@ -174,8 +174,8 @@ function render() {
   
 	
   name = "Moon";
-  planet = Planets[name3];
-  data = SolarSystem[name3];
+  planet = Planets[name];
+  data = SolarSystem[name];
   //
   //  Add your code for more planets here!
   //
