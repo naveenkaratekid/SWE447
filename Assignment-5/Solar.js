@@ -158,6 +158,8 @@ function render() {
   planet.PointMode = false;
 	
   ms.push();
+  ms.rotate(time/data2.getYear, [0,1,0]);
+  ms.translate(data2.distance, 0, 0);
   ms.scale(data2.radius);
   gl.useProgram(planet2.program);
   gl.uniformMatrix4fv(planet2.uniforms.MV, true, flatten(ms.current()));
