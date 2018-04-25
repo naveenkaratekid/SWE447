@@ -1,0 +1,84 @@
+An overview of how a simple ray tracing program might work:
+
+- define the scene we want to render. We describes the objects in the scene by specifying the location, attributes (such as radius for spheres), color, texture, etc.
+
+- specify where the camera and the view window should be located. For simplicity, we can assume that the camera is always on the Z axis pointing towards the origin, and that the view window is located at the origin.
+
+- determine the size of the view window, which is specified by a field of view (FOV) parameter.
+
+divide the window into the resolution required for our output picture, e.g. 1920 × 1080.
+
+
+
+
+- Then step through each of the 1920 × 1080 points on the view window, defining a ray from the eye to that point. For each ray, we calculate its intersection with all the objects in the scene. If it does not intersect any objects, we set the ray - and therefore the corresponding pixel - to the background color. Otherwise, we choose the object with the closest intersection. If the object is reflective, we call the ray-tracing function again recursively, passing it the reflected ray direction. If the object is transparent, we do the same thing with the refracted direction. The calling function then computes the color for the object it is dealing with, and combines this color with the reflected and refracted rays' colors. 
+
+When the original ray-tracing call from the eye to the view window returns, the color will be the final color for that pixel - taking into account reflection, refraction, and shadows. This pixel color is then written out to the output file. When all points on the view window have been processed this way, you will have a finished ray-traced picture.
+
+ 
+
+Question: to render a frame, we shoot a primary ray for each pixel of the frame buffer
+Please provide an implementation of this part of the algorithm in pseudo-code assuming we are using "rayintersect" function we defined in "Ray_Tracing_Intersection.pdf".
+Most of the algorithm is provided, please replace "....." with the lines of pseudo-code in 4 places below:
+
+ 
+
+for (int j = 0; j < image_Height; ++j) {
+
+for (int i = 0; i < image_Width; ++i) {
+
+// compute primary ray direction
+
+Ray primRay;
+
+computePrimRay(i, j, &primRay);
+
+// shoot prim ray in the scene and search for intersection
+
+Point pHit;
+
+Normal nHit;
+
+float minDist = INFINITY;
+
+Object object = NULL;
+
+for (int k = 0; k < objects.size(); ++k) { // find the object we are interested in
+
+...........
+
+}
+
+if (object != NULL) {
+
+// compute illumination
+
+Ray shadowRay;
+
+shadowRay.direction = lightPosition - pHit;
+
+bool isShadow = false;
+
+for (int k = 0; k < objects.size(); ++k){ //any object in between this object and light position ?
+
+.....
+
+}
+
+}
+
+if (!isInShadow)
+
+// calcule the pixels[i][j] color here.
+
+.....
+
+else
+
+// calcule the pixels[i][j] color here.
+
+.....
+
+  }
+
+}
