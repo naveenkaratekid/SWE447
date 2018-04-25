@@ -1,0 +1,75 @@
+for (int j = 0; j < image_Height; ++j) {
+
+for (int i = 0; i < image_Width; ++i) {
+
+    // compute primary ray direction
+
+    Ray primRay;
+
+    computePrimRay(i, j, &primRay);
+
+    // shoot prim ray in the scene and search for intersection
+
+    Point pHit;
+
+    Normal nHit;
+
+    float minDist = INFINITY;
+
+    Object object = NULL;
+
+    for (int k = 0; k < objects.size(); ++k) { // find the object we are interested in
+
+        if(Intersect(objects[k], primRay, &pHit, &nHit))
+        {
+            float dist = Distance(eyePosition, pHit);
+            if(dist < minDistance)
+            {
+                object = objects[k];
+                minDistance = dist; // here we update the minimum distance
+            }
+        }
+
+    }
+
+if (object != NULL) {
+
+    // compute illumination
+
+    Ray shadowRay;
+
+    shadowRay.direction = lightPosition - pHit;
+
+    bool isShadow = false;
+
+    for (int k = 0; k < objects.size(); ++k){ //any object in between this object and light position ?
+        if(Intersect(objects[k], shadowRay))
+        {
+            isInShadow = true;
+            break;
+        }
+    }
+
+}
+
+if (!isInShadow)
+{
+    pixels[i][j] = object->color * light.brightness;
+
+    // calcule the pixels[i][j] color here.
+}
+
+else
+{
+    pixels[i][j] = 0; // its zero because if the pixels are in the show, we can't see them
+}
+
+// calcule the pixels[i][j] color here.
+
+.....
+
+  }
+
+}
+
+ 
